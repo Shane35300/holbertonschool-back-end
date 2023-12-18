@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import csv
 import json
 import sys
 import urllib.request
@@ -23,18 +22,15 @@ todo_list = []
 for todo in todos:
     dico = {}
     if todo['userId'] == int(sys.argv[1]):
-        dico['id'] = str(sys.argv[1])
-        dico['username'] = username
+        dico['task'] = todo['title']
         dico['completed'] = str(todo['completed'])
-        dico['title'] = todo['title']
+        dico['username'] = username
         todo_list.append(dico)
-# Définir les noms de colonnes pour le fichier CSV
-fields = ['id', 'username', 'completed', 'title']
-# Nom du fichier CSV
-csv_filename = f'{sys.argv[1]}.csv'
+dictionary = {}
+dictionary[str(sys.argv[1])] = todo_list
+
+# Nom du fichier json
+json_filename = f'{sys.argv[1]}.json'
 # Écrire les données dans le fichier CSV
-with open(csv_filename, mode='w', newline='') as csv_file:
-    writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
-    # Écrire les lignes de données
-    for todo in todo_list:
-        writer.writerow([todo[field] for field in fields])
+with open(json_filename, mode='w') as json_file:
+    json.dump(dictionary, json_file)
