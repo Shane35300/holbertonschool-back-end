@@ -11,7 +11,6 @@ if __name__ == '__main__':
     url_todos = "https://jsonplaceholder.typicode.com/todos"
     url_users = "https://jsonplaceholder.typicode.com/users"
 
-
     with urllib.request.urlopen(url_todos) as response:
         data_todos = response.read()
     with urllib.request.urlopen(url_users) as response:
