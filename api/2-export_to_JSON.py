@@ -27,9 +27,9 @@ if __name__ == '__main__':
         if todo['userId'] == int(sys.argv[1]):
             dico['task'] = todo['title']
             if str(todo['completed']) == 'True':
-                dico['completed'] = "true"
+                dico['completed'] = True
             else:
-                dico['completed'] = "false"
+                dico['completed'] = False
             dico['username'] = username
             todo_list.append(dico)
     dictionary = {}
