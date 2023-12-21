@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""This script fetches and displays the TODO list progress for a
+given employee ID."""
 
 import json
 import sys
