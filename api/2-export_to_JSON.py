@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module that import data into JSON format
+"""
 
 import json
 import sys
