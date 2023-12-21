@@ -22,12 +22,12 @@ if __name__ == '__main__':
             total_tasks = 0
             for todo in todos:
                 if (todo['userId'] == int(sys.argv[1]) and
-                        todo['completed'] == True):
+                        todo['completed'] is True):
                     tasks += 1
                 if todo['userId'] == int(sys.argv[1]):
                     total_tasks += 1
     print("Employee {} is done with tasks({}/{}):".format(user_name,
                                                           tasks, total_tasks))
     for todo in todos:
-        if (todo['userId'] == int(sys.argv[1]) and todo['completed'] == True):
+        if (todo['userId'] == int(sys.argv[1]) and todo['completed'] is True):
             print(f"\t {todo['title']}")
